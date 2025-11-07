@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uts/srceens/login_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -364,8 +365,12 @@ class _SignInPageState extends State<SignInPage> {
                         height: 56,
                         child: OutlinedButton(
                           onPressed: () {
-                            // TODO: Navigate to sign up page
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SignUpPage()), // Sieharusnya SignUpPage
+                            );
                           },
                           style: OutlinedButton.styleFrom(
                             side: BorderSide(
@@ -386,6 +391,7 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 20),
                       const Spacer(),
                     ],
                   ),
