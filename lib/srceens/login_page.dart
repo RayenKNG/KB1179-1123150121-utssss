@@ -624,7 +624,7 @@ class _SignUpPageState extends State<SignUpPage> {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SignInPage()),
+        MaterialPageRoute(builder: (context) => const SignUpPage()),
       );
     });
   }
