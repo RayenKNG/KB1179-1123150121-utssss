@@ -29,7 +29,7 @@ class SplashScreen3 extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  MaterialPageRoute(builder: (context) => const SignUpPage()),
                 );
               },
               style: ElevatedButton.styleFrom(
