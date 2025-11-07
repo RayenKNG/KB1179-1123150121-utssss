@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uts/srceens/signin_page.dart';
+import 'package:flutter_uts/srceens/splash_screen1.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -99,7 +101,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       // Back button
                       IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SplashScreen1()),
+                          );
                         },
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
                         padding: EdgeInsets.zero,
@@ -571,7 +577,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignInPage()),
+                              );
                             },
                             child: const Text(
                               'Sign In',
@@ -612,7 +622,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
     // Navigate back to login after a delay
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pop(context);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const SignInPage()),
+      );
     });
   }
 
