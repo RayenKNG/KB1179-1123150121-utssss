@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uts/srceens/login_page.dart';
+import 'package:flutter_uts/srceens/splash_screen1.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -59,20 +60,20 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
               ),
-              // Miku Image - Right side
-              Positioned(
-                right: -40,
-                bottom: -20,
-                child: Opacity(
-                  opacity: 0.85,
-                  child: Image.asset(
-                    'images/assets/image5.png',
-                    width: 350,
-                    height: 500,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
+              // // Miku Image - Right side
+              // Positioned(
+              //   right: -40,
+              //   bottom: -20,
+              //   child: Opacity(
+              //     opacity: 0.85,
+              //     child: Image.asset(
+              //       'images/assets/image7.png',
+              //       width: 350,
+              //       height: 500,
+              //       fit: BoxFit.contain,
+              //     ),
+              //   ),
+              // ),
               // Main content
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -268,24 +269,24 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      // Forgot Password
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {
-                            // TODO: Implement forgot password
-                          },
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 32),
+                      // // Forgot Password
+                      // Align(
+                      //   alignment: Alignment.centerRight,
+                      //   child: TextButton(
+                      //     onPressed: () {
+                      //       // TODO: Implement forgot password
+                      //     },
+                      //     child: const Text(
+                      //       'Forgot Password?',
+                      //       style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontSize: 12,
+                      //         fontWeight: FontWeight.w500,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // const SizedBox(height: 32),
                       // Sign In Button
                       Container(
                         width: double.infinity,
@@ -310,6 +311,12 @@ class _SignInPageState extends State<SignInPage> {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               _handleSignIn();
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SplashScreen1()),
+                              );
                             }
                           },
                           style: ElevatedButton.styleFrom(
@@ -362,7 +369,7 @@ class _SignInPageState extends State<SignInPage> {
                       // Sign Up Link
                       SizedBox(
                         width: double.infinity,
-                        height: 56,
+                        height: 35,
                         child: OutlinedButton(
                           onPressed: () {
                             Navigator.pushReplacement(
@@ -385,7 +392,7 @@ class _SignInPageState extends State<SignInPage> {
                             'Create New Account',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 20,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
